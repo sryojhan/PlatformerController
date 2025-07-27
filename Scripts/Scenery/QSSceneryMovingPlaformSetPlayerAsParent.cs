@@ -13,7 +13,8 @@ namespace QuickStart
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            collision.transform.SetParent(null);
+            if (collision.gameObject.activeInHierarchy) 
+                collision.transform.SetParent(null);
         }
     }
 }
